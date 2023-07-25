@@ -43,8 +43,9 @@ directories** of your torrents, mapped to the same path as **rTorrent**.
 Injection will work best if you use the `Original` content layout.
 
 :::
-
-2. Edit your config file:
+1. Make sure your cross-seed's `outputDir` specified in `config.js` is visible to your qBittorrent.
+2. Go to your qBittorrent's `Options` -> `Downloads` -> `Automatically add torrents from:` and add the folder you made visible to qBittorrent in the step above, and the save location as default, then save.
+3. Edit your config file:
     1. Set your [`action`](../reference/options#action) option to `inject`.
     2. Set your [`qbittorrentUrl`](../reference/options#qbittorrenturl) option.
        It should look like an `http` url that looks like
