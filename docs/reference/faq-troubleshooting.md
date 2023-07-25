@@ -13,5 +13,20 @@ Remove any `stop_untied=` schedules from your .rtorrent.rc.
 Commonly: `schedule2 = untied_directory, 5, 5, (cat,"stop_untied=",(cfg.watch),"*.torrent")`
 
 ## Failed to inject, saving instead.
+This could be caused by a number of reasons. Check the verbose log:
 
+### 1. `injection failed: Failed to retrieve data dir; torrent not found in client`
+This is caused by not having your download client set up to grab torrents from the cross-seed's output folder automatically.
+
+#### qBittorrent
+1. Make sure the `outputDir` folder in config.js is visible to your target qBittorrent instance at `qbittorrentUrl` in `config.js`.
+2. go to qBittorrent's `Options` -> `Downloads` -> `Automatically add torrents from:` and add the folder you specified as `outputDir` in cross-seed, and the save location as default.
+3. Save
+
+#### Transmission
 TODO
+
+#### rTorrent 
+TODO
+
+
